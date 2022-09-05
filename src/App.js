@@ -17,7 +17,7 @@ function App() {
         .then(result => {
           setWeather(result);
           setQuery('');
-          /*console.log(result);*/
+          console.log(result);
         });
     }
   }
@@ -64,6 +64,39 @@ function App() {
               <div className="temp">{Math.round(weather.main.temp)}°C</div>
               <div className="temp">{Math.round((weather.main.temp * (9/5)) + 32)}°F</div>
               <div className="weather">{weather.weather[0].main}</div>
+              <div className={
+                (typeof weather.weather[0].id != "undefined") ?
+                /* Change Weather Symbol depending on current weather IDs */
+                ((200 <= weather.weather[0].id && weather.weather[0].id <= 531) ? 'rain-sym' : /* Rainy Weather */
+                (600 <= weather.weather[0].id && weather.weather[0].id <= 622) ? 'snow-sym' : /* Snowy Weather */
+                (701 <= weather.weather[0].id && weather.weather[0].id <= 781) ? 'hazard-sym' : /* Hazardous Weather */
+                (801 <= weather.weather[0].id && weather.weather[0].id <= 804) ? 'cloud-sym' : /* Cloudy Weather */
+                'sun-sym') : 'sun-sym'} /* Default Sunny Weather */> 
+              </div>
+              {200 <= weather.weather[0].id && weather.weather[0].id <= 531 &&
+                <div className="rain-drop">
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                  <div className="rain-item"></div>
+                </div>
+              }
             </div>
         </div>
         ) : ('')}
