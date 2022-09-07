@@ -2,11 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  z-index: 1;
 }
 
 body {
   font-family: 'montseratt', sans-serif;
 }
+
+/*==================== Site Background ====================*/
 
 .app {
   background-color: darkgreen;
@@ -34,6 +37,8 @@ main {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75));
   padding: 25px;
 }
+
+/*==================== Search Bar ====================*/
 
 .search-box {
   width: 100%;
@@ -66,6 +71,8 @@ main {
   background-color: rgba(255, 255, 255, 0.75);
 }
 
+/*==================== Location ====================*/
+
 .location-box .location {
   color: #FFF;
   font-size: 32px;
@@ -82,6 +89,8 @@ main {
   text-align: center;
   text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
 }
+
+/*==================== Weather ====================*/
 
 .weather-box {
   text-align: center;
@@ -111,6 +120,8 @@ main {
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
 
+/*==================== Rainy Weather ====================*/
+
 .weather-box .rain-sym {
   position: relative;
   display: inline-block;
@@ -119,6 +130,7 @@ main {
   height: 100px;
   background-color: #D3D3D3;
   border-radius: 100px;
+  z-index: 1;
 }
 
 .weather-box .rain-sym::before {
@@ -135,7 +147,6 @@ main {
 
 .weather-box .rain-drop {
   position: relative;
-  z-index: 1;
 }
 
 .weather-box .rain-drop .rain-item {
@@ -144,72 +155,17 @@ main {
   width: 10px;
   height: 10px;
   background: rgb(0, 110, 255);
+  background: #D3D3D3;
   margin: 0 2px;
   bottom: -30px;
   border-radius: 50%;
   animation: drop 5s linear infinite;
   transform-origin: bottom;
 }
-
-.weather-box .rain-drop .rain-item:nth-child(1) {
-  animation-duration: 1.36s;
-}
-.weather-box .rain-drop .rain-item:nth-child(2) {
-  animation-duration: 0.76s;
-}
-.weather-box .rain-drop .rain-item:nth-child(3) {
-  animation-duration: 0.96s;
-}
-.weather-box .rain-drop .rain-item:nth-child(4) {
-  animation-duration: 0.66s;
-}
-.weather-box .rain-drop .rain-item:nth-child(5) {
-  animation-duration: 0.99s;
-}
-.weather-box .rain-drop .rain-item:nth-child(6) {
-  animation-duration: 1.25s;
-}
-.weather-box .rain-drop .rain-item:nth-child(7) {
-  animation-duration: 1.40s;
-}
-.weather-box .rain-drop .rain-item:nth-child(8) {
-  animation-duration: 1.15s;
-}
-.weather-box .rain-drop .rain-item:nth-child(9) {
-  animation-duration: 0.80s;
-}
-.weather-box .rain-drop .rain-item:nth-child(10) {
-  animation-duration: 1.00s;
-}
-.weather-box .rain-drop .rain-item:nth-child(11) {
-  animation-duration: 1.15s;
-}
-.weather-box .rain-drop .rain-item:nth-child(12) {
-  animation-duration: 0.80s;
-}
-.weather-box .rain-drop .rain-item:nth-child(13) {
-  animation-duration: 1.15s;
-}
-.weather-box .rain-drop .rain-item:nth-child(14) {
-  animation-duration: 1.30s;
-}
-.weather-box .rain-drop .rain-item:nth-child(15) {
-  animation-duration: 1.20s;
-}
-.weather-box .rain-drop .rain-item:nth-child(16) {
-  animation-duration: 0.9s;
-}
-.weather-box .rain-drop .rain-item:nth-child(17) {
-  animation-duration: 0.75s;
-}
-.weather-box .rain-drop .rain-item:nth-child(18) {
-  animation-duration: 1.08s;
-}
-.weather-box .rain-drop .rain-item:nth-child(19) {
-  animation-duration: 1.10s;
-}
-.weather-box .rain-drop .rain-item:nth-child(20) {
-  animation-duration: 1.00s;
+@for $i from 1 through 20 {
+  .weather-box .rain-drop .rain-item:nth-child(#{$i}) {
+    animation-duration: #{random(100) / 20}s;
+  }
 }
 
 @keyframes drop {
@@ -219,7 +175,75 @@ main {
   70% {
     transform: translateY(320px) scale(1);
   }
+  80% {
+    background: rgb(0, 110, 255);
+  }
   100% {
     transform: translateY(320px) scale(0);
+  }
+}
+
+.weather-box .rain-dropbg .rain-itembg {
+  --size: 0.5vw;
+  width: var(--size);
+  height: var(--size);
+  background: rgb(0, 110, 255);
+  border-radius: 50%;
+  position: fixed;
+  top: -5vh;
+  z-index: 0;
+}
+
+@for $i from 1 through 50 {
+  .weather-box .rain-dropbg .rain-itembg:nth-child(#{$i}) {
+    --size: #{random(5) * 0.09}vw;
+    left: #{random(100)}vw;
+    animation: rainfall #{5 + random(10) / 100}s linear infinite;
+    animation-delay: -#{random(10)}s;
+  }
+}
+
+@keyframes rainfall {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(110vh);
+  }
+}
+
+/*==================== Snowy Weather ====================*/
+
+.weather-box .snow-drop .snow-item {
+  --size: 1vw;
+  width: var(--size);
+  height: var(--size);
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: -5vh;
+}
+
+@for $i from 1 through 50 {
+  .weather-box .snow-drop .snow-item:nth-child(#{$i}) {
+    --size: #{random(5) * 0.2}vw;
+    --left-ini: #{random(20) - 10}vw;
+    --left-end: #{random(20) - 10}vw;
+    left: #{random(100)}vw;
+    animation: snowfall #{5 + random(10)}s linear infinite;
+    animation-delay: -#{random(10)}s;
+  }
+}
+
+.snow-item:nth-child(6n) {
+  filter: blur(1px);
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translate3d(var(--left-ini), 0, 0);
+  }
+  100% {
+    transform: translate3d(var(--left-end), 110vh, 0);
   }
 }
