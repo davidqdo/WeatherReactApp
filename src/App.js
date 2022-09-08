@@ -68,10 +68,8 @@ function App() {
                 (typeof weather.weather[0].id != "undefined") ?
                 /* Change Weather Symbol depending on current weather IDs */
                 ((200 <= weather.weather[0].id && weather.weather[0].id <= 531) ? 'rain-sym' : /* Rainy Weather */
-                (600 <= weather.weather[0].id && weather.weather[0].id <= 622) ? 'snow-sym' : /* Snowy Weather */
-                (701 <= weather.weather[0].id && weather.weather[0].id <= 781) ? 'hazard-sym' : /* Hazardous Weather */
                 (801 <= weather.weather[0].id && weather.weather[0].id <= 804) ? 'cloud-sym' : /* Cloudy Weather */
-                'sun-sym') : 'sun-sym'} /* Default Sunny Weather */> 
+                'default-sym') : 'default-sym'} /* Default Case No Sym */> 
               </div>
               {200 <= weather.weather[0].id && weather.weather[0].id <= 531 && /* Rainy Weather Symbol */
                 <div>{RainDrops()} {RainDropsBG()}</div>
@@ -80,7 +78,19 @@ function App() {
               <div>{SnowDrops()}</div>
               }
               {701 <= weather.weather[0].id && weather.weather[0].id <= 781 && /* Hazardous Weather */
-              <div></div>
+              <div className={(typeof weather.weather[0].id != "undefined") ? 
+                ((weather.weather[0].id === 701) ? 'mist-sym' : /* Misty Weather */
+                (weather.weather[0].id === 711) ? 'smoke-sym' : /* Smoky Weather */
+                (weather.weather[0].id === 721) ? 'haze-sym' : /* Hazy Weather */
+                (weather.weather[0].id === 731) ? 'whirl-sym' : /* Dusty / Sandy Whirlwind Weather */
+                (weather.weather[0].id === 741) ? 'fog-sym' : /* Foggy Weather */
+                (weather.weather[0].id === 751) ? 'sand-sym' : /* Sandy Weather */
+                (weather.weather[0].id === 761) ? 'dust-sym' : /* Dusty Weather */
+                (weather.weather[0].id === 762) ? 'ash-sym' : /* Volcanic Ash Weather */
+                (weather.weather[0].id === 771) ? 'squall-sym' : /* Squall Weather */
+                (weather.weather[0].id === 781) ? 'tornado-sym' : /* Tornado Weather */
+                'default-sym') : 'default-sym'} /* Default Case No Sym */>
+              </div>
               }
               {weather.weather[0].id === 800 &&                                 /* Sunny / Clear Weather */
               <div>{ClearSun()}</div>

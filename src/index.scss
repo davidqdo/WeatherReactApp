@@ -7,6 +7,7 @@
 
 body {
   font-family: 'montseratt', sans-serif;
+  overflow: hidden;
 }
 
 /*==================== Site Background ====================*/
@@ -200,6 +201,7 @@ main {
     left: #{random(100)}vw;
     animation: rainfall #{5 + random(10) / 100}s linear infinite;
     animation-delay: -#{random(10)}s;
+    animation-duration: #{random(100) / 50}s;
   }
 }
 
