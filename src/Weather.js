@@ -26,7 +26,7 @@ export function RainDrops() {
 }
 
 export function RainDropsBG() {
-    return (
+    return(
         <div className="rain-dropbg">
             <div className="rain-itembg"></div>
             <div className="rain-itembg"></div>
@@ -83,7 +83,7 @@ export function RainDropsBG() {
 }
 
 export function SnowDrops() {
-    return (
+    return(
         <div className="snow-drop">
             <div className="snow-item"></div>
             <div className="snow-item"></div>
@@ -136,5 +136,11 @@ export function SnowDrops() {
             <div className="snow-item"></div>
             <div className="snow-item"></div>
     </div>
+    );
+}
+
+export function ClearSun() {
+    return(
+        <div className="sun"></div>
     );
 }

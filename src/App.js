@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {RainDrops, RainDropsBG, SnowDrops} from "./Weather.js";
+import {ClearSun, RainDrops, RainDropsBG, SnowDrops} from "./Weather.js";
 /* Weather API */
 const api = {
   key: "2a371191d68e6c42d89404f7437faa0a",
@@ -40,7 +40,7 @@ function App() {
       /* Change the screen color based on user-submitted location and its temperature */
         ? ((weather.main.temp <= 8) ? 'app cold' : /* Cold Weather */
           (weather.main.temp > 8 && weather.main.temp <= 16) ? 'app cool' : /* Cool Weather */
-          (weather.main.temp > 16 && weather.main.temp <= 24) ? 'app warm' : /* Warm Weather */
+          (weather.main.temp > 16 && weather.main.temp < 25) ? 'app warm' : /* Warm Weather */
           (weather.main.temp >= 25) ? 'app hot' : /* Hot Weather */
           'app') : 'app'}>
       <main>
@@ -83,7 +83,7 @@ function App() {
               <div></div>
               }
               {weather.weather[0].id === 800 &&                                 /* Sunny / Clear Weather */
-              <div></div>
+              <div>{ClearSun()}</div>
               }
               {801 <= weather.weather[0].id && weather.weather[0].id <= 804 && /* Cloudy Weather */
               <div></div>
