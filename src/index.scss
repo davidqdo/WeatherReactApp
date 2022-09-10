@@ -291,3 +291,88 @@ main {
                 0 0 40px 100px #ffde0010;
   }
 }
+
+/*==================== Cloudy Weather ====================*/
+.weather-box .cloud-sym {
+  display: inline-block;
+  position: relative;
+  margin-top: 120px;
+  width: 300px;
+  height: 100px;
+  border-radius: 50px;
+  background: #D3D3D3;
+  animation: cloudymove 8s linear infinite;
+  z-index: 2;
+}
+
+.weather-box .cloud-sym::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 40px;
+  width: 110px;
+  height: 110px;
+  background: #D3D3D3;
+  border-radius: 50%;
+  box-shadow: 90px 0 0 30px #D3D3D3;
+}
+
+.weather-box .sun-cloud {
+  display: inline-block;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 450px;
+  left: 850px;
+  width: 100px;
+  height: 100px;
+  background: #ffe208;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 8, .5);
+  z-index: 1;
+  animation: sunrotate 20s linear infinite;
+}
+
+.weather-box .sun-cloud li {
+  list-style: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 3px;
+  background: #ffe208;
+  box-shadow: 0 0 15px rgba(255, 255, 8, .5);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+@for $i from 1 through 8 {
+  .weather-box .sun-cloud li:nth-child(#{$i}) {
+    transform: translate(-50%, -50%) rotate(#{$i * 22.5}deg);
+  }
+}
+
+@keyframes cloudymove {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(50px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes sunrotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

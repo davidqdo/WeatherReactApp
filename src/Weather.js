@@ -144,3 +144,21 @@ export function ClearSun() {
         <div className="sun"></div>
     );
 }
+
+export function CloudySym() {
+    return(
+        <div>
+            <div className="cloud-sym"></div>
+            <ul className="sun-cloud">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    );
+}

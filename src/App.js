@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {ClearSun, RainDrops, RainDropsBG, SnowDrops} from "./Weather.js";
+import {ClearSun, CloudySym, RainDrops, RainDropsBG, SnowDrops} from "./Weather.js";
 /* Weather API */
 const api = {
   key: "2a371191d68e6c42d89404f7437faa0a",
@@ -68,7 +68,6 @@ function App() {
                 (typeof weather.weather[0].id != "undefined") ?
                 /* Change Weather Symbol depending on current weather IDs */
                 ((200 <= weather.weather[0].id && weather.weather[0].id <= 531) ? 'rain-sym' : /* Rainy Weather */
-                (801 <= weather.weather[0].id && weather.weather[0].id <= 804) ? 'cloud-sym' : /* Cloudy Weather */
                 'default-sym') : 'default-sym'} /* Default Case No Sym */> 
               </div>
               {200 <= weather.weather[0].id && weather.weather[0].id <= 531 && /* Rainy Weather Symbol */
@@ -96,7 +95,7 @@ function App() {
               <div>{ClearSun()}</div>
               }
               {801 <= weather.weather[0].id && weather.weather[0].id <= 804 && /* Cloudy Weather */
-              <div></div>
+              <div>{CloudySym()}</div>
               }
             </div>
         </div>
