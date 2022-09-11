@@ -98,6 +98,7 @@ function App() {
               <div>{CloudySym()}</div>
               }
             </div>
+            <footer className="footer"><p>&#169; David Do. All rights reserved</p></footer>
         </div>
         ) : ('')}
       </main>

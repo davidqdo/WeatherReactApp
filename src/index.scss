@@ -299,6 +299,8 @@ main {
   margin-top: 120px;
   width: 300px;
   height: 100px;
+  left: 50px;
+  top: 60px;
   border-radius: 50px;
   background: #D3D3D3;
   animation: cloudymove 8s linear infinite;
@@ -319,11 +321,11 @@ main {
 
 .weather-box .sun-cloud {
   display: inline-block;
-  position: absolute;
+  position: relative;
   margin: 0;
   padding: 0;
-  top: 450px;
-  left: 850px;
+  top: -35px;
+  right: 210px;
   width: 100px;
   height: 100px;
   background: #ffe208;
@@ -375,4 +377,13 @@ main {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/*==================== Footer ====================*/
+.footer {
+  text-align: center;
+  margin-top: 200px;
+  color: #fff;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
 }
