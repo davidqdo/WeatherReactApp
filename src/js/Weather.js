@@ -162,3 +162,20 @@ export function CloudySym() {
         </div>
     );
 }
+
+export function MistySym() {
+    return(
+        <div className="mist-container">
+            <div className="mist-img mist-img-pic"></div>
+        </div>
+    );
+}
+
+export function FoggySym() {
+    return(
+        <div className="fog-container">
+            <div className="fog-img fog-img-first"></div>
+            <div className="fog-img fog-img-second"></div>
+        </div>
+    );
+}

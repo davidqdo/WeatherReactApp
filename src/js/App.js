@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {ClearSun, CloudySym, RainDrops, RainDropsBG, SnowDrops} from "./Weather.js";
+import {ClearSun, CloudySym, FoggySym, MistySym, RainDrops, RainDropsBG, SnowDrops} from "./Weather.js";
 /* Weather API */
 const api = {
   key: "2a371191d68e6c42d89404f7437faa0a",
@@ -76,13 +76,18 @@ function App() {
               {600 <= weather.weather[0].id && weather.weather[0].id <= 622 && /* Snowy Weather */
               <div>{SnowDrops()}</div>
               }
+              {weather.weather[0].id === 701 && /* Misty Weather */
+              <div>{MistySym()}</div>
+              }
+              {weather.weather[0].id === 741 && /* Foggy Weather */
+              <div>{FoggySym()}</div>
+              }
               {701 <= weather.weather[0].id && weather.weather[0].id <= 781 && /* Hazardous Weather */
               <div className={(typeof weather.weather[0].id != "undefined") ? 
-                ((weather.weather[0].id === 701) ? 'mist-sym' : /* Misty Weather */
+                (
                 (weather.weather[0].id === 711) ? 'smoke-sym' : /* Smoky Weather */
                 (weather.weather[0].id === 721) ? 'haze-sym' : /* Hazy Weather */
                 (weather.weather[0].id === 731) ? 'whirl-sym' : /* Dusty / Sandy Whirlwind Weather */
-                (weather.weather[0].id === 741) ? 'fog-sym' : /* Foggy Weather */
                 (weather.weather[0].id === 751) ? 'sand-sym' : /* Sandy Weather */
                 (weather.weather[0].id === 761) ? 'dust-sym' : /* Dusty Weather */
                 (weather.weather[0].id === 762) ? 'ash-sym' : /* Volcanic Ash Weather */
@@ -98,7 +103,6 @@ function App() {
               <div>{CloudySym()}</div>
               }
             </div>
-            <footer className="footer"><p>&#169; David Do. All rights reserved</p></footer>
         </div>
         ) : ('')}
       </main>
