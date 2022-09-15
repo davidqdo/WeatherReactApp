@@ -171,11 +171,48 @@ export function MistySym() {
     );
 }
 
+export function SmokySym() {
+    return(
+        <div className="smoke-container">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    );
+}
+
 export function FoggySym() {
     return(
         <div className="fog-container">
             <div className="fog-img fog-img-first"></div>
             <div className="fog-img fog-img-second"></div>
+        </div>
+    );
+}
+
+export function TornadoSym() {
+    return(
+        <div className="tornado-container">
+            <div className="circle"></div>
+            <div className="circle-two"></div>
+            <div className="circle-three"></div>
+            <div className="circle-four"></div>
+            <div className="circle-five"></div>
+            <div className="circle-six"></div>
+            <div className="circle-seven"></div>
+            <div className="circle-eight"></div>
+            <div className="circle-nine"></div>
+            <div className="circle-ten"></div>
+            <div className="circle-eleven"></div>
         </div>
     );
 }
