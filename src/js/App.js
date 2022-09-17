@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {ClearSun, CloudySym, FoggySym, MistySym, RainDrops, RainDropsBG, SmokySym, SnowDrops, TornadoSym} from "./Weather.js";
+import {ClearSun, CloudySym, FoggySym, MistySym, RainDrops, RainDropsBG, SandSym, SmokySym, SnowDrops, TornadoSym} from "./Weather.js";
 /* Weather API */
 const api = {
   key: "2a371191d68e6c42d89404f7437faa0a",
@@ -85,23 +85,20 @@ function App() {
               {weather.weather[0].id === 741 && /* Foggy Weather */
               <div>{FoggySym()}</div>
               }
+              {weather.weather[0].id === 731 || weather.weather[0].id === 751 || weather.weather[0].id === 761 && /* Dusty / Sandy Weather */
+              <div>{SandSym()}</div>
+              }
+              {weather.weather[0].id === 762 && /* Tornado Weather */
+              <div>{}</div>
+              }
+              {weather.weather[0].id === 771 && /* Squall Weather */
+              <div>{}</div>
+              }
               {weather.weather[0].id === 781 && /* Tornado Weather */
               <div>{TornadoSym()}</div>
               }
-              {701 <= weather.weather[0].id && weather.weather[0].id <= 781 && /* Hazardous Weather */
-              <div className={(typeof weather.weather[0].id != "undefined") ? 
-                (
-                (weather.weather[0].id === 731) ? 'whirl-sym' : /* Dusty / Sandy Whirlwind Weather */
-                (weather.weather[0].id === 751) ? 'sand-sym' : /* Sandy Weather */
-                (weather.weather[0].id === 761) ? 'dust-sym' : /* Dusty Weather */
-                (weather.weather[0].id === 762) ? 'ash-sym' : /* Volcanic Ash Weather */
-                (weather.weather[0].id === 771) ? 'squall-sym' : /* Squall Weather */
-                (weather.weather[0].id === 781) ? 'tornado-sym' : /* Tornado Weather */
-                'default-sym') : 'default-sym'} /* Default Case No Sym */>
-              </div>
-              }
               {weather.weather[0].id === 800 && /* Sunny / Clear Weather */
-              <div>{TornadoSym()/*ClearSun()*/}</div>
+              <div>{ClearSun()}</div>
               }
               {801 <= weather.weather[0].id && weather.weather[0].id <= 804 && /* Cloudy Weather */
               <div>{CloudySym()}</div>

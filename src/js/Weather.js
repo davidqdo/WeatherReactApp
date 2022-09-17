@@ -199,6 +199,66 @@ export function FoggySym() {
     );
 }
 
+export function SandSym() {
+    return(
+        <div className="sand-container">
+            <div className="tumbleweed"></div>
+            <div className="tumbleweed"></div>
+            <div className="tumbleweed"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+            <div className="sand-item"></div>
+        </div>
+    );
+}
+
 export function TornadoSym() {
     return(
         <div className="tornado-container">
