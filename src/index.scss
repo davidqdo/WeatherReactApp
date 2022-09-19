@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  // z-index: 1;
+  z-index: 1;
 }
 
 body {
@@ -466,6 +466,50 @@ main {
   }
   100% {
       transform: rotate(360deg);
+  }
+}
+
+/*==================== Volcanic Ash Weather ====================*/
+.weather-box .ash-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.weather-box .ash-container .ash-bubbles {
+  position: relative;
+  display: flex;
+}
+
+.weather-box .ash-container .ash-bubbles span {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: #bd0808;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #bd080844, 0 0 50px #bd0808, 0 0 100px #bd0808;
+  animation: ashfall 15s linear infinite;
+}
+
+.weather-box .ash-container .ash-bubbles span:nth-child(even) {
+  background: #ac4103;
+  box-shadow: 0 0 0 10px #ac410344, 0 0 50px #ac4103, 0 0 100px #ac4103;
+}
+
+@for $i from 1 through 40 {
+  .weather-box .ash-container .ash-bubbles span:nth-child(#{$i}) {
+    animation-duration: #{12500 / random(1000)}s;
+  }
+}
+
+@keyframes ashfall {
+  0% {
+    transform: translateY(-100vh) scale(0);
+  }
+  100% {
+    transform: translateY(100vh) scale(1);
   }
 }
 
