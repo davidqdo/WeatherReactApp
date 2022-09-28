@@ -325,3 +325,60 @@ export function TornadoSym() {
         </div>
     );
 }
+
+export function SquallSym() {
+    return(
+        <div className="squall-container">
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+            <div className="squall-item"></div>
+        </div>
+    );
+}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {AshSym, ClearSun, CloudySym, FoggySym, MistySym, RainDrops, RainDropsBG, SandSym, SmokySym, SnowDrops, TornadoSym} from "./Weather.js";
+import {AshSym, ClearSun, CloudySym, FoggySym, MistySym, RainDrops, RainDropsBG, SandSym, SmokySym, SnowDrops, SquallSym, TornadoSym} from "./Weather.js";
 /* Weather API */
 const api = {
   key: "2a371191d68e6c42d89404f7437faa0a",
@@ -79,7 +79,7 @@ function App() {
               {weather.weather[0].id === 701 || weather.weather[0].id === 721 && /* Misty / Hazy Weather */
               <div>{MistySym()}</div>
               }
-              {weather.weather[0].id === 711 && /* Smoky Weather */
+              {weather.weather[0].id === 711 && /* Smoky Weather */ /* Potential Re-Working */
               <div>{SmokySym()}</div>
               }
               {weather.weather[0].id === 741 && /* Foggy Weather */
@@ -92,7 +92,7 @@ function App() {
               <div>{AshSym()}</div>
               }
               {weather.weather[0].id === 771 && /* Squall Weather */
-              <div>{}</div>
+              <div>{SquallSym()}</div>
               }
               {weather.weather[0].id === 781 && /* Tornado Weather */
               <div>{TornadoSym()}</div>

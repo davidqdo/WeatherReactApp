@@ -518,17 +518,18 @@ main {
   transform: rotateX(75deg);
   width: 200px;
   height: 200px;
+  display: inline-block;
 }
 
 .weather-box .tornado-container .circle {
   position: absolute;
   width: 400px;
   height: 400px;
-  left: 750px;
   border-radius: 200px;
   box-shadow: 1px 25px 0px 0px black inset, 5px 10px 0px 50px white inset;
   animation: spin .4s linear infinite;
   z-index: 1;
+  left: -75px;
   background: rgba(0,0,0,0.5);
 }
 
@@ -538,7 +539,7 @@ main {
   top: 140px;
   width: 350px;
   height: 350px;
-  left: 750px;
+  left: -75px;
   border-radius: 165px;
   background: rgba(0,0,0,0.3);
   box-shadow: 2px 10px 0px 0px dimgrey inset, 4px 1px 0px 50px white inset;
@@ -549,8 +550,7 @@ main {
   position: absolute;
   z-index: -20;
   top: 240px;
-  // left: 20px;
-  left: 770px;
+  left: -55px;
   width: 300px;
   height: 300px;
   border-radius: 150px;
@@ -563,8 +563,7 @@ main {
   position: absolute;
   z-index: -30;
   top: 400px;
-  // left: 60px;
-  left: 810px;
+  left: -15px;
   width: 230px;
   height: 230px;
   border-radius: 115px;
@@ -577,8 +576,7 @@ main {
   position: absolute;
   z-index: -40;
   top: 490px;
-  // left: 80px;
-  left: 830px;
+  left: 5px;
   width: 200px;
   height: 200px;
   border-radius: 100px;
@@ -591,8 +589,7 @@ main {
   position: absolute;
   z-index: -50;
   top: 590px;
-  // left: 80px;
-  left: 830px;
+  left: 5px;
   width: 150px;
   height: 150px;
   border-radius: 100px;
@@ -605,8 +602,7 @@ main {
   position: absolute;
   z-index: -60;
   top: 670px;
-  // left: 80px;
-  left: 830px;
+  left: 5px;
   width: 100px;
   height: 100px;
   border-radius: 50px;
@@ -619,8 +615,7 @@ main {
   position: absolute;
   z-index: -70;
   top: 720px;
-  // left: 80px;
-  left: 830px;
+  left: 5px;
   width: 80px;
   height: 80px;
   border-radius: 40px;
@@ -633,8 +628,7 @@ main {
   position: absolute;
   z-index: -80;
   top: 780px;
-  // left: 90px;
-  left: 840px;
+  left: 15px;
   width: 50px;
   height: 50px;
   border-radius: 25px;
@@ -647,8 +641,7 @@ main {
   position: absolute;
   z-index: -90;
   top: 820px;
-  // left: 100px;
-  left: 850px;
+  left: 25px;
   width: 25px;
   height: 25px;
   border-radius: 15px;
@@ -661,8 +654,7 @@ main {
   position: absolute;
   z-index: -100;
   top: 840px;
-  // left: 110px;
-  left: 860px;
+  left: 35px;
   width: 15px;
   height: 15px;
   border-radius: 8px;
@@ -691,6 +683,39 @@ main {
   100% {
       transform: rotate(-360deg);
   };
+}
+
+/*==================== Squall Weather ====================*/
+.weather-box .squall-container .squall-item {
+  width: 0.5px;
+  height: 70px;
+  background: #FFF;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+  rotate: 90deg;
+  position: fixed;
+  left: -5vw;
+  z-index: 0;
+}
+
+@for $i from 1 through 50 {
+  .weather-box .squall-container .squall-item:nth-child(#{$i}) {
+    top: #{random(100)}vh;
+    animation: windstorm #{5 + random(10) / 100}s linear infinite;
+    animation-delay: -#{random(10)}s;
+    animation-duration: #{random(100) / 50}s;
+  }
+}
+
+@keyframes windstorm {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-110vw);
+  }
 }
 
 /*==================== Clear / Sunny Weather ====================*/
